@@ -1,5 +1,4 @@
 import axios from "axios";
-import { me } from './auth'
 
 // Action type
 const UPDATE_USER = 'UPDATE_USER'
@@ -22,16 +21,6 @@ export const _updateUser = (user) => {
 }
 
 // Thunks
-// export const createUser = (user, history) => {
-//   return async (dispatch) => {
-//     const { data: token } = await axios.post('/api/users', user);
-//     window.localStorage.setItem('token', token);
-//     dispatch(_createUser(user));
-//     dispatch(me())
-//     history.push('/');
-//   };
-// };
-
 export const fetchUser = (id) => {
   return async (dispatch) => {
     try {

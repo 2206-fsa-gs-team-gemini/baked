@@ -21,16 +21,34 @@ router.post('/', async (req, res, next) => {
     const newUser = await User.create(req.body);
     const userToken = await newUser.generateToken();
     res.send(userToken);
-  } catch (error) {
-    next(error);
+  } catch (err) {
+    next(err);
   }
 });
+
+router.get('/:id', async (req, res, next) => {
+  try {
+    const user = await User.findByPk(req.params.id)
+    res.send(user)
+  } catch (err) {
+    next(err)
+  }
+})
 
 // router.post('/', async (req, res, next) => {
 //   try {
 //     const token = await User.authenticate(req.body);
 //     res.send(token);
-//   } catch (error) {
-//     next(error);
+//   } catch (err) {
+//     next(err);
 //   }
 // });
+
+router.put(':/id', async (req, res, next) => {
+  try {
+    const user = await User.findByPk(req.params.id)
+    res.send(await user.update(req.body))
+  } catch (err) {
+    next(err)
+  }
+})
