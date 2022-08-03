@@ -3,14 +3,15 @@ import UpdateUser from './UpdateUser'
 import {connect} from 'react-redux'
 
 export function UserProfile(props) {
-  const { name, email, password } = props
+  // const { name, email, password } = props
+  const { name } = props
     return (
     <div className="user-profile">
       <div className="welcome">
         <span id="welcome-user">
           <h1>Welcome, { name }</h1>
-          <p>{email}</p>
-          <p>{password}</p>
+          {/* <p>{email}</p>
+          <p>{password}</p> */}
         </span>
         <p>Click here to view previous orders</p>
         <button>Past Orders</button>
@@ -27,8 +28,8 @@ export function UserProfile(props) {
 const mapState = state => {
   return {
     name: state.auth.name,
-    email: state.auth.email,
-    password: state.auth.password
+    // email: state.auth.email,
+    // password: state.auth.password
   }
 }
 
