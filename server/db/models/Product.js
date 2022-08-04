@@ -40,10 +40,11 @@ const Product = db.define("product", {
     defaultValue: 50,
   },
   category: {
-    type: Sequelize.ENUM('cake', 'cookie', 'cupcake', 'mini', 'other')
+    type: Sequelize.ENUM('cake', 'cookie', 'cupcake', 'mini', 'other'),
+    defaultValue: 'other',
   },
 });
 
 module.exports = Product;
 
-// additional properties if enough time: color, ratings
+// additional properties if enough time: dietary restrictions, ratings

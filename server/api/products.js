@@ -2,11 +2,10 @@ const express = require('express');
 const router = require('express').Router();
 const Product = require('../db/models/product');
 
-// USER VIEW: VIEW ALL PRODUCTS
+//    USER VIEW: VIEW ALL PRODUCTS
 router.get('/', async (req, res, next) => {
   try {
     const products = await Product.findAll();
-
     res.send(products);
   } catch (err) {
     next(err);
@@ -27,7 +26,9 @@ router.get('/:id', async (req, res, next) => {
 //   ADMIN VIEW: ADD A NEW PRODUCT TO SHOP PAGE
 router.post('/', async (req, res, next) => {
   try {
-    res.status(201).send(await Product.create(req.body));
+    // const { name, imageURL, price, description, quantity, category } = req.body;
+    // res.status(201).send(await Product.create({ name, imageURL, price, description, quantity, category }));
+    res.status(201).send(req.body)
   } catch (error) {
     next(error);
   }

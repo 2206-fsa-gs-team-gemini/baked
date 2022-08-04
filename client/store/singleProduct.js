@@ -5,11 +5,13 @@ import axios from "axios";
 
 
 const SET_PRODUCT = 'SET_PRODUCT'
+
 // Action creator
 // export const _getSingleProduct = (product) => ({
 //   type: GET_SINGLE_PRODUCT,
 //   product,
 // });
+
 
 export const setProduct = (product) => {
   return {
@@ -38,6 +40,7 @@ export const fetchProduct = (id) => {
     }
   }
 }
+
 
 // Reducer
 const initialState = {};

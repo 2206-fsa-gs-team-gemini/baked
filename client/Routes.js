@@ -9,6 +9,8 @@ import UserProfile from './components/UserProfile';
 import CreateUser from './components/CreateUser';
 import SingleProduct from './components/SingleProduct';
 import { me } from './store';
+import AddProduct from './components/AddProduct'
+import UpdateProduct from './components/UpdateProduct';
 
 /**
  * COMPONENT
@@ -29,7 +31,9 @@ class Routes extends Component {
             <Route path="/cart" component={Cart} />
             {/* <Route path="/users/:id" component={UserProfile} /> */}
             <Route path="/profile" component={UserProfile} />
+            <Route path="/products/add" component={AddProduct} />
             <Route path="/products/:id" component={SingleProduct} />
+            <Route path="/products/:id/update" component={UpdateProduct} />
           </Switch>
         ) : (
           <Switch>
