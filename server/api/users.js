@@ -2,7 +2,9 @@ const router = require('express').Router();
 const {
   models: { User, CartItem, Order, Product },
 } = require('../db');
+const { requireToken, isAdmin } = require('./middlewares')
 module.exports = router;
+
 
 router.get('/', async (req, res, next) => {
   try {
@@ -28,17 +30,21 @@ router.post('/', async (req, res, next) => {
   }
 });
 
-router.get('/:id', async (req, res, next) => {
+router.get('/:id', requireToken, async (req, res, next) => {
   try {
-    const user = await User.findByPk(req.params.id);
-    res.send(user);
+    if (req.user.id === req.params.id) {
+      res.send(req.user);
+    } else {
+      res.sendStatus(403)
+    }
+
   } catch (err) {
     next(err);
   }
 });
 
 // SHOWS ALL ORDERS
-router.get('/:id/orders', async (req, res, next) => {
+router.get('/:id/orders', requireToken, async (req, res, next) => {
   try {
     const userOrder = await User.findByPk(req.params.id, {
       include: [
@@ -58,7 +64,7 @@ router.get('/:id/orders', async (req, res, next) => {
 });
 
 // SHOWS ONLY ACTIVE ORDER ( AKA CART )
-router.get('/:id/cart', async (req, res, next) => {
+router.get('/:id/cart', requireToken, async (req, res, next) => {
   try {
     const userOrder = await User.findByPk(req.params.id, {
       include: [
@@ -78,7 +84,7 @@ router.get('/:id/cart', async (req, res, next) => {
   }
 });
 
-router.get('/:id/orders/:orderId', async (req, res, next) => {
+router.get('/:id/orders/:orderId', requireToken, async (req, res, next) => {
   try {
     const userOrder = await User.findByPk(req.params.id, {
       include: [
@@ -97,7 +103,7 @@ router.get('/:id/orders/:orderId', async (req, res, next) => {
   }
 });
 
-router.get('/:id/cart', async (req, res, next) => {
+router.get('/:id/cart', requireToken, async (req, res, next) => {
   try {
     const userOrder = await User.findByPk(req.params.id, {
       include: [

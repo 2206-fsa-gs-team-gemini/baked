@@ -16,28 +16,28 @@ const customers = [
     password: '123',
     name: 'Nicky',
     address: '4 Coding Blvd',
-    userType: 'admin',
+    isAdmin: true
   },
   {
     email: 'cherry@gmail.com',
     password: '123',
     name: 'Cherry',
     address: '3 Coding Blvd',
-    userType: 'admin',
+    isAdmin: true
   },
   {
     email: 'amy@gmail.com',
     password: '123',
     name: 'Amy',
     address: '2 Coding Blvd',
-    userType: 'admin',
+    isAdmin: true
   },
   {
     email: 'chris@gmail.com',
     password: '123',
     name: 'Chris',
     address: '1 Coding Blvd',
-    userType: 'admin',
+    isAdmin: true
   },
 ];
 

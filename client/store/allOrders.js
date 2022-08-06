@@ -13,8 +13,17 @@ export const _setOrders = (orders) => ({
 export const fetchOrders = (userId) => {
   return async (dispatch) => {
     try {
-      const { data } = await axios.get(`/api/users/${userId}/orders`);
-      dispatch(_setOrders(data));
+      const token = window.localStorage.getItem('token');
+      if (token) {
+        const { data } = await axios.get(`/api/users/${userId}/orders`, {
+          headers: {
+            authorization: token
+          }
+        });
+        dispatch(_setOrders(data));
+      } else {
+        console.log('go to your own profile!')
+      }
     } catch (err) {
       console.error('wtf');
     }
