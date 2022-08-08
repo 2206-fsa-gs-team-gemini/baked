@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 export const Home = (props) => {
   const { firstName } = props;
+
   return <div>home page: hello, {firstName}</div>;
 };
 

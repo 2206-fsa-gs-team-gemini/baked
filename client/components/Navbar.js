@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logout} from '../store'
 
-const Navbar = ({handleClick, isLoggedIn}) => (
+const Navbar = ({handleClick, isLoggedIn, isAdmin}) => (
   <div>
     <nav>
       {isLoggedIn ? (
@@ -19,6 +19,11 @@ const Navbar = ({handleClick, isLoggedIn}) => (
             Logout
           </a>
           <Link to="/profile" className="navLink">Profile</Link>
+          {isAdmin && (
+            <Link to='/login/admin' className='navLink'>
+              Admin
+            </Link>
+          )}
           <Link to="/cart" className="navLink">Cart</Link>
           </div>
         </div>
