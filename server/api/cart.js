@@ -7,50 +7,54 @@ const { requireToken } = require('./middleware');
 
 // SEE CART
 
-// router.get('/', requireToken, async (req, res, next) => {
-//   try {
-//     let order = await Order.findOne({
-//       where: {
-//         userId: req.user.dataValues.id,
-//         status: 'open',
-//       },
-//       include: [Product],
-//     });
-//     res.send(order);
-//   } catch (err) {
-//     next(err);
-//   }
-// });
-
-router.get('/:userId', async(req, res, next) => {
+router.get('/', requireToken, async (req, res, next) => {
   try {
-    let cart = await Order.findOne({
+    let order = await Order.findOne({
       where: {
-        userId: req.params.userId
-      }
-    })
-  } catch(err) {
-    next(err)
+        userId: req.user.dataValues.id,
+        status: 'open',
+      },
+      include: [Product],
+    });
+    res.send(order);
+  } catch (err) {
+    next(err);
   }
-})
+});
 
-// router.post('/:userId', async (req, res, send) => {
+// router.get('/:userId', async(req, res, next) => {
 //   try {
-//     let order = await Order.findOne({
+//     let cart = await Order.findOne({
 //       where: {
-//         // userId: req.user.dataValues.id,
-//         userId: req.params.userId,
-//         status: 'open',
-//       },
-//       include: [Product, CartItem],
-//     });
+//         userId: req.params.userId
+//       }
+//     })
+//   } catch(err) {
+//     next(err)
+//   }
+// })
 
-//     if (!order) {
-//       order = await Order.create({
-//         status: 'open',
-//         userId: req.params.userId,
-//       });
-//     }
+router.post('/:userId', async (req, res, send) => {
+  try {
+    let order = await Order.findOne({
+      where: {
+        // userId: req.user.dataValues.id,
+        userId: req.params.userId,
+        status: 'open',
+      },
+      include: [Product, CartItem],
+    });
+
+    if (!order) {
+      order = await Order.create({
+        status: 'open',
+        userId: req.params.userId,
+      });
+
+      res.send(order);
+  }} catch (err) {
+    next(err)
+  }})
 
     // Look in cartItems to find product by orderId and productId
     // If it doesn't exist 
@@ -75,10 +79,10 @@ router.get('/:userId', async(req, res, next) => {
 // BACK END:
   // API Route to find order that is open and add product to cart
 
-router.post('/', async (req, res, next) => {
-  try {
-    let cart = await Order.create(req.body.userId)
-  } catch(err) {
-    next(err)
-  }
-})
+// router.post('/', async (req, res, next) => {
+//   try {
+//     let cart = await Order.create(req.body.userId)
+//   } catch(err) {
+//     next(err)
+//   }
+// })
