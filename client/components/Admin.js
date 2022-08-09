@@ -6,7 +6,12 @@ export const Admin = (props) => {
   console.log(props.getAllUsers)
   return (
     <div>
-      
+      <button>
+        See all users
+      </button>
+      <button>
+        Edit a product
+      </button>
     </div>
   )
 }
