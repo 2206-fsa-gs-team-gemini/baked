@@ -1,23 +1,25 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { withRouter, Route, Switch } from 'react-router-dom';
-import { Login } from './components/AuthForm';
-import Home from './components/Home';
-import { me } from './store';
-import Shop from './components/Shop';
-import Cart from './components/Cart';
-import Admin from './components/Admin';
-import SingleProduct from './components/SingleProduct';
-import OrderHistory from './components/OrderHistory';
-import UserProfile from './components/UserProfile';
-import CreateProduct from './components/CreateProduct';
-import CreateUser from './components/CreateUser';
-import UpdateProduct from './components/UpdateProduct';
-import NotFoundPage from './components/NotFoundPage';
-import OrderSuccess from './components/OrderSuccess';
-import Checkout from './components/Checkout';
-import AdminUsers from './components/AdminUsers';
-import AdminShop from './components/AdminShop';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { withRouter, Route, Switch } from "react-router-dom";
+import { Login } from "./components/AuthForm";
+import Home from "./components/Home";
+import { me } from "./store";
+import Shop from "./components/Shop";
+import Cart from "./components/Cart";
+import Admin from "./components/Admin";
+import SingleProduct from "./components/SingleProduct";
+import OrderHistory from "./components/OrderHistory";
+import UserProfile from "./components/UserProfile";
+import CreateProduct from "./components/CreateProduct";
+import CreateUser from "./components/CreateUser";
+import UpdateProduct from "./components/UpdateProduct";
+import NotFoundPage from "./components/NotFoundPage";
+import OrderSuccess from "./components/OrderSuccess";
+import Checkout from "./components/Checkout";
+import AdminUsers from "./components/AdminUsers";
+import AdminShop from "./components/AdminShop";
+import About from "./components/About";
+import Contact from "./components/Contact";
 
 class Routes extends Component {
   componentDidMount() {
@@ -51,6 +53,8 @@ class Routes extends Component {
                 <Route path="/users/orders" component={OrderHistory} />
                 <Route path="/checkout" component={Checkout} />
                 <Route path="/orderSuccess" component={OrderSuccess} />
+                <Route path="/contact" component={Contact} />
+                <Route path="/about" component={About} />
                 <Route path="*" component={NotFoundPage} status={404} />
               </Switch>
             ) : (
@@ -64,6 +68,8 @@ class Routes extends Component {
                 <Route path="/users/orders" component={OrderHistory} />
                 <Route path="/checkout" component={Checkout} />
                 <Route path="/orderSuccess" component={OrderSuccess} />
+                <Route path="/contact" component={Contact} />
+                <Route path="/about" component={About} />
                 <Route path="*" component={NotFoundPage} status={404} />
               </Switch>
             )}
@@ -79,6 +85,8 @@ class Routes extends Component {
             <Route exact path="/cart" component={Cart} />
             <Route path="/checkout" component={Checkout} />
             <Route path="/orderSuccess" component={OrderSuccess} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/about" component={About} />
             <Route path="*" component={NotFoundPage} status={404} />
           </Switch>
         )}

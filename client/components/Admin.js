@@ -5,23 +5,29 @@ import { fetchUsers } from '../store/allUsers'
 
 export const Admin = () => {
   return (
-    <div className="div-container">
+    <div>
+      {/* <section className="grid-section div-container">Admins Only</section> */}
+      <p className="admins-only">Admins Only</p>
+    <div className="admin-view">
       <Link to={`/admin/users`}>
-        <button>
-          See all users
+        <button className="admin-buttons">
+          View All Users
         </button>
       </Link>
+      <br /><br />
       <Link to={`/admin/products`}>
-        <button>
-          Edit a product
+        <button className="admin-buttons">
+          Edit A Product
         </button>
       </Link>
+      <br /><br />
       <Link to={`/products/add`}>
-        <button>
-          Add a product
+        <button className="admin-buttons">
+          Add A Product
         </button>
       </Link>
-
+      <br /><br /><br /><br /><br /><br /><br /><br /><br />
+    </div>
     </div>
   )
 }

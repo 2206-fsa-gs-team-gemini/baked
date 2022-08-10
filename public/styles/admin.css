@@ -1,0 +1,26 @@
+.admins-only {
+  font-size: 40px;
+  /* border-left: 2rem; */
+  margin: 2rem;
+}
+
+.admin-view {
+  display: inline-block;
+  padding-left: 6rem;
+}
+
+.admin-buttons {
+  border-radius: 30px;
+  background-color: #d49090;
+  height: 3rem;
+  width: 25rem;
+  /* padding: 12px; */
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin: 20px auto;
+  transition: .2s;
+  justify-content: center;
+}
