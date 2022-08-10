@@ -7,6 +7,7 @@
 @import './styles/order.css';
 @import './styles/footer.css';
 @import './styles/checkout.css';
+@import './styles/home.css';
 
 html {
   font-family: "Roboto", Helvetica, sans-serif;
