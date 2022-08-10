@@ -122,7 +122,7 @@ export const Home = (props) => {
       </div>
     );
   }
-};
+}
 
 const mapState = (state) => {
   return {
