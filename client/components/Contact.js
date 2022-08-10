@@ -21,12 +21,12 @@ export class Contact extends React.Component {
           <h3 className="contact-desc">Our Bakers:</h3>
           <div className="team-member">
             <img
-              src="https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              src="https://avatars.githubusercontent.com/u/101421813?v=4"
               className="team-member-image"
             ></img>
             <h4 className="team-member-name">Nicole Hong</h4>
             <Link
-              to={{ pathname: '' }}
+              to={{ pathname: 'https://github.com/nickyjhong' }}
               target="_blank"
               className="team-member-link"
             >
@@ -35,7 +35,7 @@ export class Contact extends React.Component {
             <br />
             <Link
               to={{
-                pathname: '',
+                pathname: 'https://www.linkedin.com/in/nicolejhong/',
               }}
               target="_blank"
               className="team-member-link"
@@ -48,7 +48,7 @@ export class Contact extends React.Component {
 
           <div className="team-member">
             <img
-              src="https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              src="https://avatars.githubusercontent.com/u/41312534?v=4"
               className="team-member-image"
             ></img>
             <h4 className="team-member-name">Cherry Xu</h4>
@@ -62,7 +62,7 @@ export class Contact extends React.Component {
             <br />
             <Link
               to={{
-                pathname: '',
+                pathname: 'https://www.linkedin.com/in/cherry-xu-rd-cdn/',
               }}
               target="_blank"
               className="team-member-link"
@@ -75,7 +75,7 @@ export class Contact extends React.Component {
 
           <div className="team-member">
             <img
-              src="https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              src="https://avatars.githubusercontent.com/u/103911065?v=4"
               className="team-member-image"
             ></img>
             <h4 className="team-member-name">Amy Wong</h4>
@@ -102,12 +102,12 @@ export class Contact extends React.Component {
 
           <div className="team-member">
             <img
-              src="https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              src="https://media-exp1.licdn.com/dms/image/C4E03AQEQ-OfyTk-7cg/profile-displayphoto-shrink_200_200/0/1561991819331?e=1665619200&v=beta&t=O_-Y2Z2Jnn3XmnTRAmNM8E7rFjEvmTgDras8XMyIXMc"
               className="team-member-image"
             ></img>
             <h4 className="team-member-name">Chris Tomshack</h4>
             <Link
-              to={{ pathname: '' }}
+              to={{ pathname: 'https://github.com/Ctomshack' }}
               target="_blank"
               className="team-member-link"
             >
@@ -116,7 +116,7 @@ export class Contact extends React.Component {
             <br />
             <Link
               to={{
-                pathname: '',
+                pathname: 'https://www.linkedin.com/in/christomshack/'
               }}
               target="_blank"
               className="team-member-link"
