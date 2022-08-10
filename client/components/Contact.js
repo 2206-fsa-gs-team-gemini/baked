@@ -75,7 +75,7 @@ export class Contact extends React.Component {
 
           <div className="team-member">
             <img
-              src="https://avatars.githubusercontent.com/u/103911065?v=4"
+              src="https://media-exp1.licdn.com/dms/image/C4D03AQF40Wuek0HEcw/profile-displayphoto-shrink_200_200/0/1584683546842?e=1665619200&v=beta&t=0paII6E8NHIhjjOqwt7ppmuwPcmHltZW8WLrzZN-5po"
               className="team-member-image"
             ></img>
             <h4 className="team-member-name">Amy Wong</h4>
