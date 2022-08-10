@@ -83,10 +83,19 @@ footer {
 
 .team-member-link .team-member-name {
   text-decoration: none;
+
+  border-left: 4rem;
+}
+
+.team-member {
   margin: 2rem;
-  border-left: 2rem;
 }
 
 .contact-desc {
   margin: 2rem;
 } 
+
+.secret-recipe {
+  height: 20rem;
+  width: auto;
+}

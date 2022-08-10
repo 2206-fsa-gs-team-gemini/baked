@@ -7,7 +7,7 @@ export class Contact extends React.Component {
       <div>
         <section className="grid-section">Contact</section>
         <article className="contact">
-          <p className="contact-">
+          <p className="contact-desc">
             Obviously, Baked By Fullstack isn't a real bakery and unfortunately,
             we don't sell any of the products we have listed.
           </p>
