@@ -35,21 +35,21 @@ export class About extends React.Component {
               <img
                 className="js-logo"
                 alt="javascript"
-                src="https://seeklogo.com/images/J/javascript-logo-8892AEFCAC-seeklogo.com.png"
+                src="http://powerforallats.com/wp-content/uploads/2016/03/js-logo.png"
               />
             </label>
             <label htmlFor="s2" id="slide2">
               <img
                 className="react-js-logo"
                 alt="react js"
-                src="https://d12i7q49526cmu.cloudfront.net/media/original_images/React_Logo.png"
+                src="https://miro.medium.com/max/384/1*To2H39eauxaeYxYMtV1afQ.png"
               />
             </label>
             <label htmlFor="s3" id="slide3">
               <img
                 className="redux-js-logo"
                 alt="redux js"
-                src="https://seeklogo.com/images/R/redux-logo-9CA6836C12-seeklogo.com.png"
+                src="https://upload.wikimedia.org/wikipedia/commons/4/49/Redux.png"
               />
             </label>
             <label htmlFor="s4" id="slide4">
