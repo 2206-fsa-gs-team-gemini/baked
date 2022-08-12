@@ -1,16 +1,17 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { createProduct } from '../store/allProducts';
+import React from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { createProduct } from "../store/allProducts";
 
 class CreateProduct extends React.Component {
   constructor() {
     super();
     this.state = {
-      name: '',
-      price: 0,
-      description: '',
-      category: '',
+      name: "",
+      imageURL: "",
+      price: "",
+      description: "",
+      category: "",
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,13 +28,13 @@ class CreateProduct extends React.Component {
   }
 
   render() {
-    const { name, price, description, category } = this.state;
+    const { name, imageURL, price, description, category } = this.state;
     const { handleSubmit, handleChange } = this;
     return (
       <div className="add-product-form">
         <form className="add-form-input" onSubmit={handleSubmit}>
           <div className="form update">
-            <h1 style={{ textAlign: 'center' }}>Add Product</h1>
+            <h1 style={{ textAlign: "center" }}>Add Product</h1>
 
             <div className="product-info-div">
               <div className="product-info-name">
@@ -59,6 +60,27 @@ class CreateProduct extends React.Component {
 
             <div className="product-info-div">
               <div className="product-info-name">
+                <span htmlFor="productimage">Picture</span>
+              </div>
+              <div className="product-info-input">
+                <input
+                  name="imageURL"
+                  onChange={handleChange}
+                  value={imageURL}
+                  required
+                  onInvalid={(e) =>
+                    e.target.setCustomValidity(
+                      "Product picture is a required field",
+                      alert("Go back and add a product picture")
+                    )
+                  }
+                  onInput={(e) => e.target.setCustomValidity("")}
+                />
+              </div>
+            </div>
+
+            <div className="product-info-div">
+              <div className="product-info-name">
                 <span htmlFor="productPrice">Price</span>
               </div>
               <div className="product-info-input">
@@ -70,7 +92,9 @@ class CreateProduct extends React.Component {
                   onInvalid={(e) =>
                     e.target.setCustomValidity(
                       "Product price is a required field",
-                      alert("How do you plan to sell a product without a price?")
+                      alert(
+                        "How do you plan to sell a product without a price?"
+                      )
                     )
                   }
                   onInput={(e) => e.target.setCustomValidity("")}
@@ -104,7 +128,11 @@ class CreateProduct extends React.Component {
                 <span htmlFor="productCategory">Category</span>
               </div>
               <div className="cat-cont">
-                <select onChange={handleChange} name='category' className="category-list">
+                <select
+                  onChange={handleChange}
+                  name="category"
+                  className="category-list"
+                >
                   <option value={category}></option>
                   <option value="cake">cake</option>
                   <option value="cookie">cookie</option>
@@ -119,7 +147,7 @@ class CreateProduct extends React.Component {
           <div className="update-btns create-btns">
             <button type="submit">Add</button>
             <button type="button" className="buttonShadow">
-              <Link to={"/admin"}>Cancel</Link>
+              <Link to="/admin">Cancel</Link>
             </button>
           </div>
         </form>
