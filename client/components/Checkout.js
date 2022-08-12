@@ -291,15 +291,19 @@
 import React from 'react';
 import axios from 'axios';
 import StripeCheckout from 'react-stripe-checkout';
-// import { toast } from 'react-toastify';
 import { Route, Redirect } from 'react-router-dom';
-
-// toast.configure();
+import { connect } from 'react-redux';
+import { emptyCart } from '../store/cart';
 
 class Checkout extends React.Component {
   constructor() {
     super();
     this.handleToken = this.handleToken.bind(this);
+    // this.handleSuccess = this.handleSuccess(this);
+  }
+
+  componentDidMount() {
+    this.props.emptyCart(this.props.cart);
   }
 
   async handleToken(token) {
@@ -311,14 +315,14 @@ class Checkout extends React.Component {
     });
     const { status } = response.data;
     if (status === 'success') {
-      console.log('Success! Check email for details', { type: 'success' })
+      alert('Success! Check email for details', { type: 'success' })
     } else {
-      console.log('Uh oh! Something went wrong!', { type: 'error'})
+      alert('Uh oh! Something went wrong!', { type: 'error'})
     }
   }
 
   render() {
-    const { handleToken } = this;
+    const { handleToken, handleSuccess } = this;
     return (
       <div>
         <StripeCheckout 
@@ -337,4 +341,12 @@ class Checkout extends React.Component {
   }
 }
 
-export default Checkout;
+const mapStateToProps = (state) => ({
+  cart: state.cart,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  emptyCart: (cart) => dispatch(emptyCart(cart)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Checkout);
