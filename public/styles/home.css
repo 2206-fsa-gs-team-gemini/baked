@@ -39,7 +39,7 @@
 
 .slider figure {
   position: relative;
-  width: 500%;
+  width: 800%;
   margin: 0;
   left: 0;
   animation: 20s slider infinite;
@@ -105,7 +105,7 @@
 }
 
 .home-image {
-  height: 30rem;
+  max-height: 35rem;
   width: auto;
 }
 

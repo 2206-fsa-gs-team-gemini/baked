@@ -150,6 +150,8 @@ footer {
 .contact-desc {
   text-align: center;
   margin-top: 0px;
+  margin-bottom: 0.5px;
+  padding: 0px;
 }
 
 .contact-header {

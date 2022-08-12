@@ -18,7 +18,7 @@ export class About extends React.Component {
           <br />
           <br />
         </article>
-        <p className="secret-recipe">Our Secret Ingredients 🤫</p>
+        <p className="secret-recipe">Our Secret Ingredients 👀</p>
         <p className="s-r-2">Instructions can be found <Link to={{ pathname: "https://github.com/2206-fsa-gs-team-gemini/baked" }} target="_blank" className="footer-link">here</Link> or in the <span style={{ color: '#d49090' }}>Recipe</span> tab on the bottom of the page</p>
         <div className="slidershow">
           <section id="slider">
