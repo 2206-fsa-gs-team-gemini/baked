@@ -13,8 +13,9 @@
 html {
   font-family: "Roboto", Helvetica, sans-serif;
   font-size: 2.5vh;
-  height: 100%;
+  /* height: 100%; */
   overflow-x: hidden;
+  
 }
 
 body {
@@ -23,20 +24,17 @@ body {
   width: auto;
 }
 
-#app, .div-container {
-  height: 78vh;
+.div-container {
+  height: 100vh;
+  overflow: hidden;
 }
+
 a {
   text-decoration: none;
 }
 
 label {
   display: block;
-}
-
-nav a {
-  display: inline-block;
-  margin: 1em;
 }
 
 form div {

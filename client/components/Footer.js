@@ -5,6 +5,9 @@ const Footer = () => (
   <footer>
   <div className="footer-container">
     <ul className='footer-list'>
+      <li>
+        <p>👋</p>
+      </li>
       <li className='footer-link'>
         <Link to={{ pathname: "https://github.com/2206-fsa-gs-team-gemini/baked" }} target="_blank" className="footer-link">Recipe</Link>
       </li>

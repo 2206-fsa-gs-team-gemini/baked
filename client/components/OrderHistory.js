@@ -10,7 +10,6 @@ export class OrderHistory extends React.Component {
 
   render() {
     const orders = this.props.orders;
-    console.log(orders);
     return (
       <div className="order-section">
         <h3 style={{ marginLeft: '2rem' }}>Order History</h3>
@@ -24,6 +23,7 @@ export class OrderHistory extends React.Component {
                   <div style={{ fontWeight: 'bold' }}>Name</div>
                   <div style={{ fontWeight: 'bold' }}>Price</div>
                   <div style={{ fontWeight: 'bold' }}>Quantity</div>
+                  <div style={{ fontWeight: 'bold' }}>Total</div>
                 </div>
                 {order.products.map((item) => {
                   return (
@@ -41,6 +41,9 @@ export class OrderHistory extends React.Component {
                       <span style={{ fontSize: '.8rem' }}>
                         {item.cartItem.quantity}
                       </span>
+                      <span style={{ fontSize: '.8rem' }}>
+                        {(item.price / 100) * item.cartItem.quantity}
+                      </span>
                     </div>
                   );
                 })}
@@ -48,7 +51,7 @@ export class OrderHistory extends React.Component {
             ))}
           </div>
         ) : (
-          <div>No recent orders found</div>
+          <div className="div-container">No recent orders found</div>
         )}
       </div>
     );

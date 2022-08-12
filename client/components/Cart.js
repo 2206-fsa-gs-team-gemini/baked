@@ -28,7 +28,7 @@ class Cart extends Component {
     return (
       <div>
         <h2 style={{ textAlign: 'center' }}>Shopping Cart</h2>
-        <div className="cart-container">
+        <div className="cart-container div-container">
           <div className="cart-section-left">
             <div className="shopping-cart-left-container">
               <div className="checkout-card-row">
@@ -166,15 +166,15 @@ class Cart extends Component {
   }
 }
 
-const mapState = (state) => ({
+const mapStateToProps = (state) => ({
   cart: state.cart,
 });
 
-const mapDispatch = (dispatch) => ({
+const mapDispatchToProps = (dispatch) => ({
   fetchCart: () => dispatch(fetchCart()),
   deleteFromCart: (productId) => dispatch(deleteFromCart(productId)),
   updateCart: (product, newQuantity) =>
     dispatch(updateQuantity(product, newQuantity)),
 });
 
-export default connect(mapState, mapDispatch)(Cart);
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);
