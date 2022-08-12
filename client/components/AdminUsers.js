@@ -11,15 +11,26 @@ export class AdminUsers extends Component {
     const users = this.props.users;
     return (
       <div>
-        <h2>Users:</h2>
+        <p style={{ textAlign: 'center' }} className="admins-only">Accounts</p>
+        <table className="av-table">
+            <tr>
+              <th className='av-table-heading'>Customer ID</th>
+              <th className='av-table-heading'>First Name</th>
+              <th className='av-table-heading'>Last Name</th>
+              <th className='av-table-heading'>Email</th>
+              <th className='av-table-heading'>Address</th>
+            </tr>
         {users.map((user) => (
-          <div key={user.id}>
-            <p>First name: {user.firstName}</p>
-            <p>Last name: {user.lastName} </p>
-            <p>Email: {user.email} </p>
-            <hr />
-          </div>
+            <tr key={user.id}  className='av-table-row'>
+              <td className='av-table-data'>{user.id}</td>
+              <td className='av-table-data'>{user.firstName}</td>
+              <td className='av-table-data'>{user.lastName}</td>
+              <td className='av-table-data'>{user.email}</td>
+              <td className='av-table-data'>{user.address}</td>
+            </tr>
         ))}
+        <br />
+        </table>
       </div>
     );
   }
