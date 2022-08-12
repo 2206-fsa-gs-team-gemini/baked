@@ -29,7 +29,9 @@
     "morgan": "^1.9.1",
     "node-sass": "^7.0.1",
     "pg": "^8.5.1",
-    "sequelize": "^6.3.5"
+    "react-stripe-checkout": "^2.6.3",
+    "sequelize": "^6.3.5",
+    "stripe": "^10.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",

@@ -23,9 +23,7 @@ class OrderSuccess extends React.Component {
           </div>
         </div>
         <p style={{ textAlign: 'center' }}>
-          Your Order Number: {Math.floor(Math.random() * Math.floor(999))}-
-          {Math.floor(Math.random() * Math.floor(999))}-
-          {Math.floor(Math.random() * Math.floor(9999))}
+          Your Order Number: {this.props.cart.id}
         </p>
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
       </div>
