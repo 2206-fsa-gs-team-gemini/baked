@@ -289,9 +289,12 @@
 
 // With Stripe
 import React from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
-import StripeCheckout from 'react-stripe-checkout'
+import StripeCheckout from 'react-stripe-checkout';
+// import { toast } from 'react-toastify';
+import { Route, Redirect } from 'react-router-dom';
+
+// toast.configure();
 
 class Checkout extends React.Component {
   constructor() {
@@ -299,11 +302,19 @@ class Checkout extends React.Component {
     this.handleToken = this.handleToken.bind(this);
   }
 
-  handleToken(token, addresses) {
-    axios.post('/api/checkout', {
+  async handleToken(token) {
+    const response = await axios.post('/api/checkout', {
       token,
-      addresses,
-    })
+      product: {
+        price: 3.99,
+      }
+    });
+    const { status } = response.data;
+    if (status === 'success') {
+      console.log('Success! Check email for details', { type: 'success' })
+    } else {
+      console.log('Uh oh! Something went wrong!', { type: 'error'})
+    }
   }
 
   render() {

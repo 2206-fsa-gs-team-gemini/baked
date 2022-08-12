@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
   res.send("Add your Stripe Secret Key to the require('stripe') statement!");
 });
 
-router.post("/checkout", async (req, res) => {
+router.post("/", async (req, res) => {
   console.log("Request: \n", req.body);
   let error;
   let status;
@@ -32,8 +32,8 @@ router.post("/checkout", async (req, res) => {
           address: {
             line1: token.card.address_line1,
             line2: token.card.address_line2,
-            city: token.card.address_city,
             postal_code: token.card.address_zip,
+            city: token.card.address_city,
           },
         },
       },

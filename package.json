@@ -30,6 +30,7 @@
     "node-sass": "^7.0.1",
     "pg": "^8.5.1",
     "react-stripe-checkout": "^2.6.3",
+    "react-toastify": "^9.0.8",
     "sequelize": "^6.3.5",
     "stripe": "^10.2.0"
   },
