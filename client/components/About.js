@@ -5,7 +5,7 @@ export class About extends React.Component {
   render() {
     return (
       <div>
-        {/* <section className="contact-header">About</section>
+        <section className="contact-header">About</section>
         <article className="contact-desc">
           <p className="about-p">
             Thanks for stopping by! Here at Baked By Fullstack, we guarantee top
@@ -18,11 +18,11 @@ export class About extends React.Component {
           <br />
           <br />
         </article>
-        <p className="secret-recipe">Our Secret Recipe 🤫</p>
-        <p className="s-r-2">Instructions can be found <Link to={{ pathname: "https://github.com/2206-fsa-gs-team-gemini/baked" }} target="_blank" className="footer-link">here</Link> or in the <span style={{ color: '#d49090' }}>Recipe</span> tab on the bottom of the page</p> */}
+        <p className="secret-recipe">Our Secret Ingredients 🤫</p>
+        <p className="s-r-2">Instructions can be found <Link to={{ pathname: "https://github.com/2206-fsa-gs-team-gemini/baked" }} target="_blank" className="footer-link">here</Link> or in the <span style={{ color: '#d49090' }}>Recipe</span> tab on the bottom of the page</p>
         <div className="slidershow">
           <section id="slider">
-            <input type="radio" name="slider" id="s1" checked />
+            <input type="radio" name="slider" id="s1" defaultChecked />
             <input type="radio" name="slider" id="s2" />
             <input type="radio" name="slider" id="s3" />
             <input type="radio" name="slider" id="s4" />
@@ -31,56 +31,56 @@ export class About extends React.Component {
             <input type="radio" name="slider" id="s7" />
             <input type="radio" name="slider" id="s8" />
 
-            <label for="s1" id="slide1">
+            <label htmlFor="s1" id="slide1">
               <img
                 className="js-logo"
                 alt="javascript"
                 src="https://seeklogo.com/images/J/javascript-logo-8892AEFCAC-seeklogo.com.png"
               />
             </label>
-            <label for="s2" id="slide2">
+            <label htmlFor="s2" id="slide2">
               <img
                 className="react-js-logo"
                 alt="react js"
                 src="https://d12i7q49526cmu.cloudfront.net/media/original_images/React_Logo.png"
               />
             </label>
-            <label for="s3" id="slide3">
+            <label htmlFor="s3" id="slide3">
               <img
                 className="redux-js-logo"
                 alt="redux js"
                 src="https://seeklogo.com/images/R/redux-logo-9CA6836C12-seeklogo.com.png"
               />
             </label>
-            <label for="s4" id="slide4">
+            <label htmlFor="s4" id="slide4">
               <img
                 className="express-js-logo"
                 alt="express js"
                 src="https://res.cloudinary.com/practicaldev/image/fetch/s--KkScstnJ--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zojuy79lo3fn3qdt7g6p.png"
               />
             </label>
-            <label for="s5" id="slide5">
+            <label htmlFor="s5" id="slide5">
               <img
                 className="sequelize-logo"
                 alt="sequelize"
                 src="https://www.vectorlogo.zone/logos/sequelizejs/sequelizejs-ar21.png"
               />
             </label>
-            <label for="s6" id="slide6">
+            <label htmlFor="s6" id="slide6">
               <img
                 className="postgres-logo"
                 alt="postgreSQL"
                 src="https://www.unixmen.com/wp-content/uploads/2017/07/postgresql-logo.png"
               />
             </label>
-            <label for="s7" id="slide7">
+            <label htmlFor="s7" id="slide7">
               <img
                 className="css-logo"
                 alt="css"
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png"
               />
             </label>
-            <label for="s8" id="slide8">
+            <label htmlFor="s8" id="slide8">
               <img
                 className="html-logo"
                 alt="html"
