@@ -27,7 +27,7 @@ class OrderSuccess extends React.Component {
           {Math.floor(Math.random() * Math.floor(999))}-
           {Math.floor(Math.random() * Math.floor(9999))}
         </p>
-        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
       </div>
     );
   }
