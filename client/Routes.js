@@ -40,13 +40,8 @@ class Routes extends Component {
                 <Route exact path="/admin" component={Admin} />
                 <Route exact path="/admin/users" component={AdminUsers} />
                 <Route exact path="/admin/products" component={AdminShop} />
-                {/* <Route exact path="/products" component={Shop} /> */}
                 <Route path="/products/add" component={CreateProduct} />
-                <Route
-                  exact
-                  path="/products/:id/update"
-                  component={UpdateProduct}
-                />
+                <Route exact path="/products/:id/update" component={UpdateProduct} />
                 <Route path="/products/:id" component={SingleProduct} />
                 <Route exact path="/cart" component={Cart} />
                 <Route exact path="/profile" component={UserProfile} />
@@ -95,9 +90,6 @@ class Routes extends Component {
   }
 }
 
-/**
- * CONTAINER
- */
 const mapState = (state) => {
   return {
     // Being 'logged in' for our purposes will be defined has having a state.auth that has a truthy id.
