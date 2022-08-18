@@ -18,6 +18,8 @@ import OrderSuccess from './components/OrderSuccess';
 import Checkout from './components/Checkout';
 import AdminUsers from './components/AdminUsers';
 import AdminShop from './components/AdminShop';
+import Contact from './components/Contact';
+import About from './components/About';
 
 class Routes extends Component {
   componentDidMount() {
@@ -38,7 +40,6 @@ class Routes extends Component {
                 <Route exact path="/admin" component={Admin} />
                 <Route exact path="/admin/users" component={AdminUsers} />
                 <Route exact path="/admin/products" component={AdminShop} />
-                {/* <Route exact path="/products" component={Shop} /> */}
                 <Route path="/products/add" component={CreateProduct} />
                 <Route
                   exact
@@ -51,6 +52,8 @@ class Routes extends Component {
                 <Route path="/users/orders" component={OrderHistory} />
                 <Route path="/checkout" component={Checkout} />
                 <Route path="/orderSuccess" component={OrderSuccess} />
+                <Route path="/contact" component={Contact} />
+                <Route path="/about" component={About} />
                 <Route path="*" component={NotFoundPage} status={404} />
               </Switch>
             ) : (
@@ -64,6 +67,8 @@ class Routes extends Component {
                 <Route path="/users/orders" component={OrderHistory} />
                 <Route path="/checkout" component={Checkout} />
                 <Route path="/orderSuccess" component={OrderSuccess} />
+                <Route path="/contact" component={Contact} />
+                <Route path="/about" component={About} />
                 <Route path="*" component={NotFoundPage} status={404} />
               </Switch>
             )}
@@ -79,6 +84,8 @@ class Routes extends Component {
             <Route exact path="/cart" component={Cart} />
             <Route path="/checkout" component={Checkout} />
             <Route path="/orderSuccess" component={OrderSuccess} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/about" component={About} />
             <Route path="*" component={NotFoundPage} status={404} />
           </Switch>
         )}
@@ -90,7 +97,7 @@ class Routes extends Component {
 /**
  * CONTAINER
  */
-const mapState = (state) => {
+const mapStateToProps = (state) => {
   return {
     // Being 'logged in' for our purposes will be defined has having a state.auth that has a truthy id.
     // Otherwise, state.auth will be an empty object, and state.auth.id will be falsey
@@ -99,7 +106,7 @@ const mapState = (state) => {
   };
 };
 
-const mapDispatch = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     loadInitialData() {
       dispatch(me());
@@ -109,4 +116,4 @@ const mapDispatch = (dispatch) => {
 
 // The `withRouter` wrapper makes sure that updates are not blocked
 // when the url changes
-export default withRouter(connect(mapState, mapDispatch)(Routes));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Routes));
